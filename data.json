@@ -1,10 +1,5 @@
 [
     {
-        "nom": "acheter des oranges",
-        " tacheAchevee": false,
-        "id": 1718643488
-    },
-    {
         "nom": "aller au travaille ",
         " tacheAchevee": false,
         "id": 1718643534
@@ -24,27 +19,10 @@
         "tacheAchevee": false,
         "id": 1718713771
     },
+
     {
-        "nom": "donner a menehem la cate navigo",
-        " tacheAchevee": false
-    },
-    {
-        "nom": "donner a menahem des vetements",
-        " tacheAchevee": false,
-        "id": 1718714611
-    },
-    {
-        "nom": "faire a manger",
-        " tacheAchevee": false
-    },
-    {
-        "nom": "resoudre l&#39;erreur",
+        "nom": "resoudre l&#39;erreurs",
         " tacheAchevee": false,
         "id": 1718741461
-    },
-    {
-        "nom": "acheter des oranges",
-        " tacheAchevee": false,
-        "id": 1718741465
     }
 ]
