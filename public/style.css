@@ -66,3 +66,20 @@ footer {
 .todo-container h1 {
     text-align: center;
 }
+
+.submit {
+    width: 85%;
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3px 6px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.erreur {
+    color: red;
+}
