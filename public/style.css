@@ -68,13 +68,16 @@ footer {
 }
 
 .submit {
-    width: 85%;
+    margin-top: 20px;
+    width: 89%;
+    border: solid var(--primary-color) 1px;
+    border-radius: 3px;
 }
 
 .button {
     background-color: var(--primary-color);
     color: white;
-    padding: 3px 6px;
+    /* padding: 3px 6px; */
     border-radius: 3px;
     border: none;
     cursor: pointer;
@@ -82,4 +85,30 @@ footer {
 
 .erreur {
     color: red;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 12px;
+}
+.fait {
+    margin: 0px;
+    background-color: #43cf7e;
+    border-radius: 3px;
+    border: none;
+}
+
+.supprimer {
+    background-color: rgb(218, 67, 21);
+    border-radius: 3px;
+    border: none;
+}
+
+.liste li {
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+    line-height: 15px;
 }

@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             [
                 'nom' => $nouvelleListe,
                 //(flase) 
+                'tacheAchevee' => false,
                 'id' => time()
             ]
         ];
@@ -53,16 +54,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="todo-form"></div>
             <div class="todo-list"></div>
 
-            <form action="#" method="post" class="formulaire">
-                <input type="text" name="liste" id="liste" class="submit"> <input type="submit" value="Ajouter" class="button">
+            <form action="" method="post" class="formulaire">
+                <input type="text" name="liste" id="liste" class="submit" placeholder="Ajoute une tâche à faire"> <input type="submit" value="Ajouter" class="button">
                 <?php if (!empty($erreur)) : ?>
                     <p class="erreur"> <?= $erreur ?></p>
                 <?php endif ?>
                 <ul class="liste">
                     <?php foreach ($listes as $liste) : ?>
-                        <li class="item">
-                            <span class="nom"><?= $liste['nom'] ?></span>
-                            <button>Supprimer</button>
+                        <li>
+                            <?= $liste['nom']; ?>
+                            <button class="fait">
+                                <a href="remove.php?id=<?= $liste['id'] ?>">
+                                    <?= $liste['tacheAchevee'] ? 'C\'est fait' : 'A faire' ?>
+                                </a>
+                            </button>
+                            <button class="supprimer">
+                                <a href="delet.php?id=<?= $liste['id'] ?>">
+                                    Supprimer
+                                </a>
+                            </button>
                         </li>
                     <?php endforeach ?>
                 </ul>
