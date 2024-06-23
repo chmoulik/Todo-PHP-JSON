@@ -10,7 +10,7 @@ $listes = [];
 
 if (file_exists($filename)) {
     $donnees = file_get_contents($filename);
-    // (true) pour le rendre en tableau associatifs.
+    // (true) pour le rendre en tableaux associatifs.
     $listes = json_decode($donnees, true) ?? [];
 }
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$erreur) {
         $listes = [
-            //spread (…) permet de decomposer et recuperer les tableaux en les mettant au debut du nouveau tableau.
+            //spread (…) permet de décomposer et de récupérer les tableaux en les mettant au début du nouveau tableau.
             ...$listes,
             [
                 'nom' => $nouvelleListe,
@@ -55,13 +55,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="todo-list"></div>
 
             <form action="" method="post" class="formulaire">
-                <input type="text" name="liste" id="liste" class="submit" placeholder="Ajoute une tâche à faire"> <input type="submit" value="Ajouter" class="button">
+                <input type="text" name="liste" id="liste" class="input" placeholder="Ajoute une tâche à faire">
+                <input type="submit" value="Ajouter" class="button">
                 <?php if (!empty($erreur)) : ?>
                     <p class="erreur"> <?= $erreur ?></p>
                 <?php endif ?>
                 <ul class="liste">
                     <?php foreach ($listes as $liste) : ?>
-                        <li>
+                        <li class="void <?= $liste['tacheAchevee'] === true ? 'opacite' : '' ?>">
                             <?= $liste['nom']; ?>
                             <button class="fait">
                                 <a href="remove.php?id=<?= $liste['id'] ?>">
@@ -69,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </a>
                             </button>
                             <button class="supprimer">
-                                <a href="delet.php?id=<?= $liste['id'] ?>">
+                                <a href="delete.php?id=<?= $liste['id'] ?>">
                                     Supprimer
                                 </a>
                             </button>
